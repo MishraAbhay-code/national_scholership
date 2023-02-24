@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_nsp_menu_wizard_form" model="ir.ui.view">
+        <field name="name">view_management_form</field>
+        <field name="model">nsp.menu.wizard</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Menu Registration">
+                <h2 style="text-align:center;font-weight: bold">Please enter the data</h2>
+                <sheet>
+                    <group>
+                        <field name="registration_num"/>
+                        <field name="date_of_birth"/>
+                    </group>
+                    <footer>
+                        <button name="%(national_scholership.wizard_under_action_window)d" string="Conferm"
+                                type="action" class="oe_highlight"/>
+                    </footer>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="nsp_menu_wizard_action_window" model="ir.actions.act_window">
+        <field name="name">Registration Menu</field>
+        <field name="res_model">nsp.menu.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+</odoo>

@@ -1,0 +1,13 @@
+<odoo>
+    <data>
+        <record id="action_nsp_view_report" model="ir.actions.report">
+            <field name="name">Print NSP Data PDF</field>
+            <field name="model">nsp.form</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">national_scholership.nsp_form_details_report</field>
+            <field name="report_file">national_scholership.nsp_form_details_report</field>
+            <field name="binding_model_id" ref="national_scholership.model_nsp_form"/>
+            <field name="binding_type">report</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_mathmatical_calculator_form" model="ir.ui.view">
+        <field name="name">view_mathmatical_calculator_form</field>
+        <field name="model">mathmatical.calculation</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Mathmatical Calculator">
+                <sheet>
+                    <h1 style="text-align:left;font-size: 2em;font-weight: bold">Mathmatical Calculator</h1>
+                    <group>
+                        <group>
+                            <field name="enter_num_f"/>
+                            <field name="enter_num_s"/>
+                            <field name="enter_num_t"/>
+                             <field name="choice_data"/>
+                        </group>
+                        <group>
+                            <field name="calculated_output"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_math_calculation_new_tree" model="ir.ui.view">
+        <field name="name">view_math_calculation_new_tree</field>
+        <field name="model">mathmatical.calculation</field>
+        <field name="arch" type="xml">
+            <tree string="Recent Data">
+                <field name="choice_data"/>
+                <field name="enter_num_f"/>
+                <field name="enter_num_s"/>
+                <field name="enter_num_t"/>
+                <field name="calculated_output"/>
+            </tree>
+        </field>
+    </record>
+
+
+
+    <record id="reg_mathmatical_calculator_action_window" model="ir.actions.act_window">
+        <field name="name">Mathmatical Calculator</field>
+        <field name="res_model">mathmatical.calculation</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+<!--        ================ For manu view =============-->
+<!--    <menuitem name="Mathmatical Calculator"-->
+<!--              id="reg_mathmatical_calculator_root_menu"-->
+<!--              parent="national_scholership.nsp_new_form_root_menu"-->
+<!--              action="reg_mathmatical_calculator_action_window"-->
+<!--              sequence="8"/>-->
+<!--    ================= For index view ================-->
+
+<!--    <menuitem name="Mathmatical Calculator"-->
+<!--              id="reg_mathmatical_calculator_root_menu"-->
+<!--              />-->
+
+
+
+
+
+</odoo>

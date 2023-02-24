@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_final_form_form" model="ir.ui.view">
+        <field name="name">view_final_form_form</field>
+        <field name="model">final.form</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Calculator">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="first_name"/>
+                            <field name="last_name"/>
+                            <field name="father_name"/>
+                            <field name="full_name"/>
+                             <field name="gender"/>
+                             <field name="date_of_birth"/>
+                             <field name="adhar_num"/>
+                        </group>
+                        <group>
+                            <field name="college_name"/>
+                            <field name="education"/>
+                            <field name="education_year"/>
+                            <field name="semester_starting"/>
+                            <field name="roll_number"/>
+                            <field name="email_id"/>
+                            <field name="scholarship_validity"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_final_form_new_tree" model="ir.ui.view">
+        <field name="name">view_final_form_new_tree</field>
+        <field name="model">final.form</field>
+        <field name="arch" type="xml">
+            <tree string="Recent Data">
+                <field name="full_name"/>
+                <field name="college_name"/>
+                <field name="roll_number"/>
+<!--                <field name="email_id"/>-->
+            </tree>
+        </field>
+    </record>
+
+
+
+    <record id="reg_final_form_action_window" model="ir.actions.act_window">
+        <field name="name">Final Form</field>
+        <field name="res_model">final.form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <menuitem name="Final Form"
+              id="final_form_root_menu"
+              parent="national_scholership.nsp_new_form_root_menu"
+              action="reg_final_form_action_window"
+              sequence="10"/>
+
+
+</odoo>

@@ -1,0 +1,11 @@
+<odoo>
+    <record id="sale_order_form_view_action_tests" model="ir.actions.server">
+        <field name="name">Test</field>
+        <field name="model_id" ref="sale.model_sale_order"/>
+        <field name="binding_model_id" ref="sale.model_sale_order"/>
+        <field name="binding_view_types">form</field>
+        <field name="state">code</field>
+        <field name="code">action = records.action_tests()</field>
+    </record>
+
+</odoo>

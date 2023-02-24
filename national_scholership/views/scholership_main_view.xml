@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_National_Scholership_form" model="ir.ui.view">
+        <field name="name">view_National_Scholership_form</field>
+        <field name="model">scholership.main</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="National Scholership">
+                <header>
+                    <button name="%(national_scholership.wizard_nextbutton_action_window)d" string="Next" type="action" class="oe_highlight"/>
+                    <button name="action_confirm" string="Confirm" type="object" class="oe_highlight"/>
+                    <button name="action_done" string="Done" type="object" class="oe_highlight"/>
+                    <!--                    <display Next,Confirm,Done button in front of same button
+                                                using giver here <field name="state_button" widget="statusbar" statusbar_visible="next,confirm,done"/> line code/>-->
+                    <field name="state_button" widget="statusbar" statusbar_visible="confirm,done"/>
+                </header>
+                <sheet>
+                    <h1>
+                        <field name="student_image" widget="image" class="oe_avatar"/>
+                    </h1>
+                    <group>
+                        <group>
+                            <field name="student_name_m"/>
+                            <field name="student_gendar" widget="radio"/>
+                            <field name="student_dob"/>
+                            <field name="father_name"/>
+                            <field name="contact_num"/>
+                            <field name="e_mail"/>
+                        </group>
+                        <group>
+                            <field name="edu_ad"/>
+                            <field name="qualification"/>
+                            <field name="edu_comp"/>
+                            <field name="registration_num"/>
+                            <field name="password"/>
+                            <field name="status"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="view_national_scholership_tree" model="ir.ui.view">
+        <field name="name">view_national_scholership_tree</field>
+        <field name="model">scholership.main</field>
+        <field name="arch" type="xml">
+            <tree string="National Scholership">
+                <field name="student_name_m"/>
+                <field name="father_name"/>
+                <field name="contact_num"/>
+                <field name="edu_comp"/>
+                <field name="qualification"/>
+                <field name="registration_num"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="national_scholership_action_window" model="ir.actions.act_window">
+        <field name="name">Walcome to N S P</field>
+        <field name="res_model">scholership.main</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="NATIONAL SCHOLERSHIP PORTAL" id="national_scholership_main_menu" sequence="5"/>
+
+    <menuitem name="Student Portal"
+              id="portal_root_menu"
+              parent="national_scholership_main_menu"
+              sequence="2"/>
+
+    <menuitem name="NSP Registration"
+              id="nsp_registration_root_menu"
+              parent="portal_root_menu"
+              action="national_scholership_action_window"
+              sequence="2"/>
+<!--    ======== menu code for wizard_menu field=====-->
+    <menuitem name="NSP Reg(W M)"
+              id="nsp_reg_wizard_menu_root_menu"
+              parent="national_scholership_main_menu"
+              action="national_scholership.nsp_menu_wizard_action_window"
+              sequence="3"/>
+
+    <menuitem name="NSP Reg(W 2)"
+              id="menub_reg_wizard_menu_root_menu"
+              parent="national_scholership_main_menu"
+              action="national_scholership.menub_wizard_action_window"
+              sequence="3"/>
+
+
+
+</odoo>

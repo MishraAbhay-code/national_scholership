@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_reg_stu_form" model="ir.ui.view">
+        <field name="name">view_reg_stu_form</field>
+        <field name="model">registered.student</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Registered Student Form">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="student_name" widget="many2many_tags"/>
+                            <field name="college_name"/>
+                        </group>
+                        <group>
+                            <field name="year_of_passing"/>
+                            <field name="e_mail"/>
+                        </group>
+                    </group>
+
+                    <notebook>
+                        <page name="rollnumber" string="Rollnumber(One2many)">
+                            <field name="roll_number">
+                        <tree editable="bottom">
+                        </tree>
+                    </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="view_reg_stu_new_tree" model="ir.ui.view">
+        <field name="name">view_reg_stu_new_tree</field>
+        <field name="model">registered.student</field>
+        <field name="arch" type="xml">
+            <tree string="Registered Student Data">
+                <field name="student_name"/>
+                <field name="college_name"/>
+                <field name="e_mail"/>
+                <field name="year_of_passing"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="reg_stu_action_window" model="ir.actions.act_window">
+        <field name="name">Registered Student Data</field>
+        <field name="res_model">registered.student</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Student Login"
+              id="login_stu_root_menu"
+              parent="national_scholership_main_menu"
+              sequence="5"/>
+
+    <menuitem name="Student"
+              id="student_main_tag_root_menu"
+              parent="login_stu_root_menu"
+              sequence="1"/>
+
+    <menuitem name="Registered Student"
+              id="rega_stu_root_menu"
+              parent="student_main_tag_root_menu"
+              action="reg_stu_action_window"
+              sequence="1"/>
+
+
+
+</odoo>

@@ -1,0 +1,14 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_scholership_main,scholership.main,model_scholership_main,base.group_system,1,1,1,1
+access_wizard_nextbutton,wizard.nextbutton,model_wizard_nextbutton,base.group_system,1,1,1,1
+access_nsp_menu_wizard,nsp.menu.wizard,model_nsp_menu_wizard,base.group_system,1,1,1,1
+access_nsp_form,nsp.form,model_nsp_form,base.group_system,1,1,1,1
+access_registered_student,registered.student,model_registered_student,base.group_system,1,1,1,1
+access_wizard_under,wizard.under,model_wizard_under,base.group_system,1,1,1,1
+access_data_form,data.form,model_data_form,base.group_system,1,1,1,1
+access_fee_calculation,fee.calculation,model_fee_calculation,base.group_system,1,1,1,1
+access_mathmatical_calculation,mathmatical.calculation,model_mathmatical_calculation,base.group_system,1,1,1,1
+access_cgpa_calculation,cgpa.calculation,model_cgpa_calculation,base.group_system,1,1,1,1
+access_final_form,final.form,model_final_form,base.group_system,1,1,1,1
+access_menub_wizard,menub.wizard,model_menub_wizard,base.group_system,1,1,1,1
+access_renewable_login,renewable.login,model_renewable_login,base.group_system,1,1,1,1

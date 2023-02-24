@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_renewable_stu_form" model="ir.ui.view">
+        <field name="name">view_renewable_stu_form</field>
+        <field name="model">renewable.login</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Registered Student Form">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="nsp_id"/>
+                        </group>
+                        <group>
+                            <field name="nsp_pasword"/>
+                            <field name="validation_button"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="view_renewable_stu_new_tree" model="ir.ui.view">
+        <field name="name">view_renewable_stu_new_tree</field>
+        <field name="model">renewable.login</field>
+        <field name="arch" type="xml">
+            <tree string="Renewable Student Data">
+                <field name="nsp_id"/>
+                <field name="nsp_pasword"/>
+                <field name="validation_button"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="renewable_stu_action_window" model="ir.actions.act_window">
+        <field name="name">Renewable Student Data</field>
+        <field name="res_model">renewable.login</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Renewable Student login"
+              id="renew_stu_root_menu"
+              parent="student_main_tag_root_menu"
+              action="renewable_stu_action_window"
+              sequence="2"/>
+
+
+</odoo>

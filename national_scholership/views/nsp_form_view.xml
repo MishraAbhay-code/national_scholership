@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_NSP_new_form_form" model="ir.ui.view">
+        <field name="name">view_NSP_new_form_form</field>
+        <field name="model">nsp.form</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="NSP Form">
+                <header>
+                    <!--                    if i click on "confirm" button then invisible "next" button -->
+                    <button name="action_next" string="Next" type="object" class="oe_highlight"
+                            attrs="{'invisible': [('state_button', 'in', ('confirm',))]}"/>
+                    <!--                    attrs for button===== invisible-->
+                    <button name="action_confirm" string="Confirm" type="object" class="oe_highlight"
+                            attrs="{'invisible': [('state_button', 'in', ('done',))]}"/>
+                    <button name="action_done" string="Done" type="object" class="oe_highlight"/>
+                    <field name="state_button" widget="statusbar" statusbar_visible="next,confirm,done"/>
+                </header>
+                <sheet>
+                    <h1 style="text-align:left;font-size: 2em;font-weight: bold">NSP Form</h1>
+                    <h1>
+                        <field name="student_image" widget="image" class="oe_avatar"/>
+                    </h1>
+                    <group>
+                        <group>
+                            <field name="student_name"/>
+                            <field name="student_gendar" widget="radio"/>
+                            <field name="student_dob"/>
+                            <field name="age_calculation"/>
+                            <!--                            <field name="father_name" attrs="{'invisible': [('student_name','=',True)] }"/>-->
+                            <field name="father_name"/>
+                            <field name="contact_num" attrs="{'readonly': [('e_mail', '=', False)]}"/>
+                            <!--                            <field name="contact_num"/>-->
+                            <field name="e_mail"/>
+                        </group>
+                        <group>
+                            <!--                            using attrs for multiple option-->
+                            <field name="adhar_num" options='{"student_name": True, "father_name": True}'
+                                   attrs="{'readonly': [('student_dob', '=', False)]}"/>
+                            <field name="college_name"/>
+                            <field name="roll_number" invisible="0"/>
+                            <field name="qualification"/>
+                            <field name="year_of_passing"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="view_nsp_form_new_tree" model="ir.ui.view">
+        <field name="name">view_nsp_form_new_tree</field>
+        <field name="model">nsp.form</field>
+        <field name="arch" type="xml">
+            <tree string="National Scholership">
+                <field name="student_name"/>
+                <field name="college_name"/>
+                <field name="roll_number"/>
+                <field name="e_mail"/>
+                <field name="year_of_passing"/>
+                <field name="qualification"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_nsp_form_kanban" model="ir.ui.view">
+        <field name="name">view_nsp_form_kanban</field>
+        <field name="model">nsp.form</field>
+        <field name="arch" type="xml">
+            <kanban class="o_kanban_mobile" sample="1">
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click">
+                            <div>
+                                <h3 style="text-align:left;font-weight: bold">
+                                    <field name="student_name"/>
+                                </h3>
+                            </div>
+                            <div>
+                                <field name="college_name"/>
+                            </div>
+                            <div>
+                                <field name="qualification"/>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+
+    <record id="nsp_form_action_window" model="ir.actions.act_window">
+        <field name="name">New N S P registration</field>
+        <field name="res_model">nsp.form</field>
+        <field name="view_mode">kanban,tree,form</field>
+    </record>
+
+    <menuitem name="NSP View"
+              id="nsp_new_form_root_menu"
+              parent="national_scholership_main_menu"
+              sequence="4"/>
+
+    <menuitem name="NSP Form"
+              id="nsp_child_form_root_menu"
+              parent="nsp_new_form_root_menu"
+              action="nsp_form_action_window"
+              sequence="5"/>
+
+    <!--    ========================== xml code for 'data.from' class =======================-->
+
+    <record id="view_data_form_form" model="ir.ui.view">
+        <field name="name">view_data_form_form</field>
+        <field name="model">data.form</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="NSP Form">
+
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="student_name"/>
+                        </group>
+                        <group>
+                            <field name="student_roll"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_data_form_new_tree" model="ir.ui.view">
+        <field name="name">view_data_form_new_tree</field>
+        <field name="model">data.form</field>
+        <field name="arch" type="xml">
+            <tree string="Student Data">
+                <field name="student_name"/>
+                <field name="student_roll"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="data_student_action_window" model="ir.actions.act_window">
+        <field name="name">Student data</field>
+        <field name="res_model">data.form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Student"
+              id="student_data_root_menu"
+              parent="national_scholership.nsp_new_form_root_menu"
+              action="data_student_action_window"
+              sequence="6"/>
+
+</odoo>

@@ -1,0 +1,36 @@
+{
+    'name': 'National Scholership Portal',
+    'version': '16.00',
+    'summary': 'NSP',
+    'sequence': 10,
+    'description': """ National Scholership Portal 
+    """,
+    'category': '',
+    'website': 'https://scholarships.gov.in/',
+    'images': [],
+    'depends': ['base','sale_management'],
+    'data': ['security/ir.model.access.csv',
+             'reports/reports_nsp_view.xml',
+             'reports/reports_nsp_template.xml',
+             'wizard/next_wizard_view.xml',
+             'wizard/nsp_menu_wizard_view.xml',
+             'wizard/wizard_menu_b_view.xml',
+             'views/scholership_main_view.xml',
+             'views/nsp_form_view.xml',
+             'views/registered_student_view.xml',
+             'views/inherit_code_view.xml',
+             'views/fee_calculation_view.xml',
+             'views/mathmatical_cal.xml',
+             'views/cgpa_percentage_view.xml',
+             'views/final_submission_form.xml',
+             'views/inherit_test_view.xml',
+             'views/renewable_login_views.xml',
+
+             ],
+    'demo': [
+    ],
+    'installable': True,
+    'application': True,
+
+    'license': 'LGPL-3',
+}

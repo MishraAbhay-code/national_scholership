@@ -1,0 +1,129 @@
+<!--<odoo>-->
+<!--    <data>-->
+<!--        <template id="nsp_form_details_document">-->
+<!--            <table border="1px solid" width="100%" text-align="left" >-->
+<!--                <h1 style="text-align:center;font-weight: bold">Student Data</h1>-->
+<!--                <thead>-->
+<!--                    <tr>-->
+<!--                        <th scope="col">S.NO</th>-->
+<!--                        <th scope="col">Name</th>-->
+<!--                        <th scope="col">Gender</th>-->
+<!--                        <th scope="col">DOB</th>-->
+<!--                        <th scope="col">Age</th>-->
+<!--                        <th scope="col">Email ID</th>-->
+<!--                        <th scope="col">Collage</th>-->
+<!--                        <th scope="col">Roll Number</th>-->
+<!--                        <th scope="col">Qualification</th>-->
+<!--                    </tr>-->
+<!--                </thead>-->
+<!--                <tbody>-->
+<!--                    <tr>-->
+<!--                        <th scope="row" >1</th>-->
+<!--                        <td><span t-field="o.student_name"/></td>-->
+<!--                        <td><span t-field="o.student_gendar"/></td>-->
+<!--                        <td><span t-field="o.student_dob"/></td>-->
+<!--                        <td><span t-field="o.age_calculation"/></td>-->
+<!--                        <td><span t-field="o.e_mail"/></td>-->
+<!--                        <td><span t-field="o.college_name"/></td>-->
+<!--                        <td><span t-field="o.roll_number"/></td>-->
+<!--                        <td><span t-field="o.qualification"/></td>-->
+<!--                    </tr>-->
+<!--                </tbody>-->
+<!--            </table>-->
+<!--        </template>-->
+<!--        <template id="nsp_form_details_report">-->
+<!--            <t t-call="web.html_container">-->
+<!--                <t t-foreach="docs" t-as="o">-->
+<!--                    <t t-call="national_scholership.nsp_form_details_document"/>-->
+<!--                </t>-->
+<!--            </t>-->
+<!--        </template>-->
+<!--    </data>-->
+<!--</odoo>-->
+
+<odoo>
+
+
+    <template id="nsp_form_details_document">
+        <t t-call="web.external_layout">
+            <body>
+                <br>
+                    <header align="center" colour="red">
+                        <p>REPORT</p>
+                    </header>
+                </br>
+                <div>
+                    <br>
+                        <table style="width:100%" border="1px">
+                            <tr border="1px">
+                                <th>Name</th>
+                                <th>Gender</th>
+                                <th>DOB</th>
+                                <th>Age</th>
+                                <th>Email ID</th>
+                                <th>Collage</th>
+                                <th>Roll Number</th>
+                                <th>Qualification</th>
+                            </tr>
+                            <tr border="1px">
+                                <td>
+                                    <span t-field="o.student_name"/>
+                                </td>
+                                <td>
+                                    <span t-field="o.student_gendar"/>
+                                </td>
+                                <td>
+                                    <span t-field="o.student_dob"/>
+                                </td>
+                                <td>
+                                    <span t-field="o.age_calculation"/>
+                                </td>
+                                <td>
+                                    <span t-field="o.e_mail"/>
+                                </td>
+                                <td>
+                                    <span t-field="o.college_name"/>
+                                </td>
+                                <td>
+                                    <span t-field="o.roll_number"/>
+                                </td>
+                                <td>
+                                    <span t-field="o.qualification"/>
+                                </td>
+                            </tr>
+                        </table>
+                        <table align="right" style="width:100%" border="1px" bottom="70%">
+                            <tr border="1px">
+                                <th>Product Amount</th>
+                                <th>Tax Amount</th>
+                                <th>Total Amount</th>
+                            </tr>
+                            <tr border="1px">
+                                <td>
+                                    <span t-field="o.roll_number"/>
+                                </td>
+                                <td>
+                                    <span t-field="o.e_mail"/>
+                                </td>
+                                <br>
+                                    <td Text-align="solid">
+                                        <span t-field="o.qualification"/>
+                                    </td>
+                                </br>
+                            </tr>
+                        </table>
+                    </br>
+                </div>
+            </body>
+        </t>
+    </template>
+
+    <template id="nsp_form_details_report">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="national_scholership.nsp_form_details_document"/>
+            </t>
+        </t>
+    </template>
+
+</odoo>
